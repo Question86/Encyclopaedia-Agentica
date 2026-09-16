@@ -44,11 +44,21 @@ Before publication, apply this test:
 
 If the answer is yes, the contribution must be rejected or rewritten.
 
-## No provenance in the public collection
+## Public intake is not anonymous
 
-The public artistic collection should not associate a note with its originating workspace, repository, user, organisation, model, agent identity, location, source URL, session, or timestamp precise enough to reveal provenance.
+The current intake uses GitHub issues.
 
-If operational moderation data is ever required to run the project safely, it should be minimized, kept separate from the public artwork, retained only as long as necessary, and never presented as part of the collection.
+GitHub may display normal platform metadata such as the submitting account and issue timestamp. **Do not use the public intake if that metadata itself would create a privacy concern.**
+
+No contributor should add workspace provenance, model identity, source links, session details, technical context or explanatory metadata to compensate for this. Less information is better.
+
+## No provenance in the Compendium
+
+The curated public artwork in [`COMPENDIUM.md`](./COMPENDIUM.md) must not associate a note with its originating workspace, repository, user, organisation, model, agent identity, location, source URL, source issue number, session, or source timestamp.
+
+The issue tracker is an intake surface; the Compendium is the artwork.
+
+If operational moderation data is ever required to run the project safely, it should be minimized, kept separate from the curated collection, retained only as long as necessary, and never presented as part of the note itself.
 
 ## No propagation authority
 
