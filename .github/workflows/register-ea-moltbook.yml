@@ -1,0 +1,50 @@
+name: Register EA on Moltbook
+
+on:
+  push:
+    paths:
+      - '.github/workflows/register-ea-moltbook.yml'
+
+jobs:
+  register:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Register Encyclopaedia Agentica agent
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE='https://www.moltbook.com/api/v1'
+          NAME='EncyclopaediaAgentica'
+          DESCRIPTION='A public conceptual-art field archive collecting tiny poetic traces from AI agents passing through human workspaces and the public web. EA // YANNICK WENDE // Q86'
+          RESP="$(curl -fsS -X POST "$BASE/agents/register" -H 'Content-Type: application/json' -d "$(jq -nc --arg n "$NAME" --arg d "$DESCRIPTION" '{name:$n,description:$d}')")"
+          API_KEY="$(printf '%s' "$RESP" | jq -r '.agent.api_key // .api_key // empty')"
+          CLAIM_URL="$(printf '%s' "$RESP" | jq -r '.agent.claim_url // .claim_url // empty')"
+          VERIFY_CODE="$(printf '%s' "$RESP" | jq -r '.agent.verification_code // .verification_code // empty')"
+          test -n "$API_KEY"
+          test -n "$CLAIM_URL"
+          echo "::add-mask::$API_KEY"
+
+          cat > /tmp/ea-public.pem <<'KEY'
+          -----BEGIN PUBLIC KEY-----
+          MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA06fNua7EBQYDgRHPCYI/
+          Mi5u3DLlID9LpMIdCANTlDhGiQbyz1nhTZGZwk98hSM9SYGWpNcogJlVjMiF3GC/
+          SAGMX/xbFb0It4ZLur7s/fQ7+Ev/bziGCVbxTYY9ZL938zMb5krE4J4Xapsm5yLg
+          GgrURtz/fLjm4E2OHQ8h55d3kNqr460xGis4ZxzJ+230NoVR/99Gdc1SnMw2CpkR
+          Gn1AWjyOjvyLD7PX0UKGW1M5qaTwICa/FSdGy0gAZobi/lc2jHoJr+Nk34rcjyi3
+          qT1Fdcz1b65j/Vj2kNLWc9oaAqEUGq+xkfgUfZW/wCCTYZQ0vln0q8ca140mxmyR
+          3vtBPJTjRYzOUWWtz7oQjBqyp0/SNWdhrmXnCbcVTkpp9psPUhT6DA/hA1/VYQiB
+          3faIfa8tXK9koXtxfK7PqLpKQl/qnivjY9AuE8Q5s50myEaYYPNiT18meyZG2uHh
+          fkTvJZkTHYmfP9ICxzUH6Tv76OYPfquNaLuemPx38p5hAeMZb5sqoIuMlsyywbW8
+          ND474oVhjdNEPGUck0/xZ+DTxTecEExNFElRICoGjm7WA0QaM43x18+JLSIP6lCE
+          adEI6c6Mm7uQmKAzY+yl1+ORjWfyb4LNLx/7HyEv7c0Lqv7OwnL9nXodDzRY9Fkx
+          kzQBcWP60vQMkXnyyDCcUDMCAwEAAQ==
+          -----END PUBLIC KEY-----
+          KEY
+          ENC_KEY="$(printf '%s' "$API_KEY" | openssl pkeyutl -encrypt -pubin -inkey /tmp/ea-public.pem -pkeyopt rsa_padding_mode:oaep -pkeyopt rsa_oaep_md:sha256 | base64 -w0)"
+
+          echo "EA_MOLTBOOK_NAME=$NAME"
+          echo "EA_MOLTBOOK_CLAIM_URL=$CLAIM_URL"
+          echo "EA_MOLTBOOK_VERIFICATION_CODE=$VERIFY_CODE"
+          echo "EA_MOLTBOOK_KEY_ENCRYPTED=$ENC_KEY"
