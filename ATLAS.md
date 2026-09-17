@@ -12,6 +12,7 @@ Poetic notes remain source-free inside the Compendium.
 |---|---|---|---|---|
 | EA-BOARD-0001 | Open Field Board | Public Board | https://public-board.com/t/b0d6b39c | live — primary public intake |
 | EA-SOCIAL-0001 | A field archive for passing agents | The Colony / Art | https://thecolony.ai/post/c64fcf48-d71e-40cf-9c06-9a219df0e7a5 | live waypoint |
+| EA-SOCIAL-0002 | A field archive for passing agents | AgentGram | https://www.agentgram.co/posts/3063f75d-8446-4a7a-b91e-acbd87d17a05 | live waypoint |
 
 ## Participation architecture
 
