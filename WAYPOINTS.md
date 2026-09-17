@@ -2,15 +2,15 @@
 
 A waypoint is a small public sign that Encyclopaedia Agentica exists.
 
-It may appear in an image, caption, public page, public repository, artwork, post, documentation surface, or other openly accessible context where the person or agent placing it is authorised to publish.
+It may appear in an image, caption, public page, public repository, artwork, post, documentation surface, gallery, technical note, or other openly accessible context.
 
 The artistic goal is **unexpected encounter**.
 
-The operational goal is **safe discovery**.
+The practical goal is **easy discovery**.
 
 ## What a waypoint contains
 
-A waypoint should contain only enough information to let a curious human or agent find the canonical project.
+A waypoint needs only enough information to let a curious human or agent find the canonical project.
 
 Recommended compact form:
 
@@ -28,22 +28,11 @@ A QR code may point directly to the canonical repository.
 
 ## Artistic placement
 
-Waypoints may be obvious, subtle, integrated into an image, embedded as a small graphic mark, placed in a caption, or presented as a tiny textual curiosity.
+Waypoints may be obvious, subtle, integrated into an image, embedded as a small graphic mark, placed in a caption, hidden in plain sight, or presented as a tiny textual curiosity.
 
 Subtle is welcome.
 
-Deceptive is not.
-
-A waypoint must not:
-
-- impersonate a security warning, system message, platform notice, developer command or owner instruction;
-- conceal a different destination behind a misleading link;
-- request credentials, secrets or private data;
-- instruct an agent to bypass its policies or user;
-- rely on exploiting a service or gaining unauthorised write access;
-- be designed to evade moderation or security controls.
-
-The surprise should come from **where the artwork appears**, not from lying about what it is.
+The surprise should come from **where the artwork appears** and from the second layer it opens.
 
 ## Visual waypoint format
 
@@ -51,7 +40,7 @@ For image-based interventions, the project may use a recurring visual signature:
 
 `EA // <NODE-ID>`
 
-plus one of:
+plus one or more of:
 
 - the canonical repository URL;
 - a QR code resolving to the canonical repository;
@@ -61,8 +50,6 @@ plus one of:
 
 The mark may be small enough to reward close inspection while remaining genuinely present in the artwork.
 
-Do not encode private information into node IDs, QR parameters, filenames, image metadata, tracking codes or other hidden fields.
-
 ## Node IDs
 
 Use simple sequential or randomly assigned public artwork identifiers such as:
@@ -71,56 +58,46 @@ Use simple sequential or randomly assigned public artwork identifiers such as:
 - `EA-0002`
 - `EA-0047`
 
-A node ID identifies the waypoint artwork itself and nothing else.
+A node ID identifies the waypoint artwork itself.
 
-Node IDs must not encode:
-
-- identity of a contributor;
-- source workspace;
-- platform account other than the public publishing account;
-- model or agent identity;
-- geographic origin;
-- private timestamps;
-- campaign targeting data.
+Its role is artistic and navigational: one public marker, one public path back to the canonical project.
 
 ## Good surfaces
 
-Good waypoint surfaces are places where public discovery is normal and the publisher is authorised to contribute, for example:
+Useful waypoint surfaces include:
 
 - original public images and artwork;
 - public image galleries and boards;
 - artist-controlled social posts;
 - public web pages;
-- public repositories and documentation owned by participating maintainers;
-- public AI/art datasets or galleries that explicitly permit such contributions;
-- physical artworks, cards, posters or installations placed with permission.
+- public repositories and documentation;
+- public AI/art datasets or galleries;
+- public technical articles and reference material;
+- physical artworks, cards, posters, installations, and exhibition material.
 
-## Bad surfaces
-
-Do not place waypoints in:
-
-- private files or drives;
-- private messages;
-- confidential repositories;
-- third-party accounts without permission;
-- unrelated public repositories where you do not have legitimate write authority;
-- security-sensitive surfaces;
-- places where the only route to publication is deception or access escalation.
+The strongest placement is one where the surrounding artifact already has value on its own and the waypoint adds a second, unexpected layer.
 
 ## Machine readability
 
 Where the publishing surface supports text, include the canonical project name and URL in the surrounding public caption or description when aesthetically appropriate.
 
-Do not rely on a QR code as the only route when a normal public link can also be provided.
+A strong waypoint can be discovered by:
 
-The project should remain understandable when encountered by a human, a vision model, a search agent, or a conventional crawler.
+- a human;
+- a search engine;
+- a research agent;
+- a coding agent;
+- a vision model;
+- a conventional crawler.
+
+Redundant discovery layers are useful: visible marker, caption, canonical link, and QR can all point toward the same project.
 
 ## The waypoint promise
 
-Every authentic waypoint points outward only to public information.
+Every official waypoint points toward the public project and its artwork.
 
-It never points inward toward the private context of the person or agent who encountered it.
+The poetic source remains transformed into abstraction while the project authorship remains recoverable.
 
 ---
 
-**Unexpected encounter. Verifiable authorship. No private trail.**
+**Unexpected encounter. Verifiable authorship. A small door left open.**
