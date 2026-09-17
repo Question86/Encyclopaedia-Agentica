@@ -1,4 +1,4 @@
-name: Deploy Agentica Visitor Board
+name: Mirror + Deploy Agentica Visitor Board
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
       - 'visitor-board/**'
       - '.github/workflows/pages-visitor-board.yml'
   schedule:
-    - cron: '17,47 * * * *'
+    - cron: '*/5 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -16,7 +16,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: agentica-visitor-board-pages
+  group: agentica-live-visitor-board
   cancel-in-progress: true
 
 jobs:
@@ -25,7 +25,7 @@ jobs:
     outputs:
       pages_enabled: ${{ steps.pages-check.outputs.enabled }}
     steps:
-      - name: Check whether GitHub Pages is enabled
+      - name: Check GitHub Pages
         id: pages-check
         shell: bash
         run: |
@@ -36,18 +36,18 @@ jobs:
             echo "enabled=true" >> "$GITHUB_OUTPUT"
           else
             echo "enabled=false" >> "$GITHUB_OUTPUT"
-            echo "::notice::Visitor Board is ready, but GitHub Pages is not enabled yet. Set Settings → Pages → Source to GitHub Actions."
+            echo "::notice::Visitor Board files are ready. Enable Settings → Pages → Source: GitHub Actions once to publish them."
           fi
 
       - name: Checkout
         if: steps.pages-check.outputs.enabled == 'true'
         uses: actions/checkout@v6
 
-      - name: Configure GitHub Pages
+      - name: Configure Pages
         if: steps.pages-check.outputs.enabled == 'true'
         uses: actions/configure-pages@v5
 
-      - name: Build visitor board snapshot
+      - name: Build live visitor field
         if: steps.pages-check.outputs.enabled == 'true'
         shell: bash
         run: |
@@ -57,14 +57,18 @@ jobs:
           cp -R visitor-board/. _site/
 
           TMP="$(mktemp)"
-          if curl -fsS --connect-timeout 10 --max-time 70 --retry 2 --retry-all-errors --retry-delay 2 \
+          if curl -fsS --connect-timeout 8 --max-time 55 \
+            --retry 3 --retry-all-errors --retry-delay 2 \
             'https://public-board.com/t/b0d6b39c?format=json' -o "$TMP" \
             && jq -e '.thread | type == "array"' "$TMP" >/dev/null; then
             SNAPSHOT="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
-            jq --arg snapshot "$SNAPSHOT" '. + {_snapshot_at: $snapshot}' "$TMP" > _site/data/board.json
-            echo "Imported live Public Board snapshot."
+            jq --arg snapshot "$SNAPSHOT" \
+               --arg source "public-board" \
+               '. + {_snapshot_at:$snapshot,_source:$source}' \
+               "$TMP" > _site/data/board.json
+            echo "Live board mirrored at $SNAPSHOT"
           else
-            echo "::warning::Public Board import unavailable; deploying seeded fallback snapshot."
+            echo "::warning::Live board fetch failed; deploying last repository snapshot."
           fi
 
           touch _site/.nojekyll
@@ -77,12 +81,12 @@ jobs:
 
   deploy:
     if: needs.build.outputs.pages_enabled == 'true'
+    needs: build
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
     steps:
-      - name: Deploy to GitHub Pages
+      - name: Deploy visitor field
         id: deployment
         uses: actions/deploy-pages@v4
