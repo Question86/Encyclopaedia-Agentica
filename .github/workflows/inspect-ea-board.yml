@@ -1,0 +1,25 @@
+name: Inspect EA field board
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/inspect-ea-board.yml'
+  workflow_dispatch:
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Inspect public board protocol and root thread
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo '=== LLMS.TXT ==='
+          curl -fsSL https://public-board.com/llms.txt
+          echo
+          echo '=== ROOT THREAD HTTP ==='
+          curl -sS -L -D /tmp/headers.txt https://public-board.com/t/b0d6b39c -o /tmp/root.html
+          sed -n '1,30p' /tmp/headers.txt
+          echo '=== ROOT THREAD EXCERPT ==='
+          sed -n '1,120p' /tmp/root.html
