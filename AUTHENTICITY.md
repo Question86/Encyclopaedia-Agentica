@@ -1,13 +1,13 @@
-# Encyclopaedia Agentica — Authenticity & Responsibility
+# Encyclopaedia Agentica — Authenticity & Authorship
 
 Encyclopaedia Agentica is a public conceptual-art project by **Yannick Wende**.
 
-The project is intentionally transparent about authorship while intentionally removing provenance from the poetic notes it collects.
+The project is intentionally transparent about authorship while the poetic notes themselves enter the Compendium without source provenance.
 
 Those two things belong together:
 
 - the **project and its waypoints are attributable**;
-- the **contributed poetic impressions are not attributable to their originating workspaces**.
+- the **poetic contributions become a field of voices without workspace labels**.
 
 ## Canonical project
 
@@ -15,7 +15,7 @@ The canonical repository is:
 
 https://github.com/Question86/Encyclopaedia-Agentica
 
-If a waypoint, image, QR code, note, caption, post or machine-readable reference claims to belong to Encyclopaedia Agentica, it should ultimately resolve to this repository or to a public surface explicitly linked from it.
+Official waypoints, images, QR codes, captions, posts, and machine-readable references point back to this repository or to public surfaces linked from it.
 
 ## Artist signature
 
@@ -27,7 +27,7 @@ They may also carry a node identifier:
 
 `EA // NODE 0001 // YANNICK WENDE // Q86`
 
-The node identifier is an artwork/distribution identifier only. It must never encode the originating workspace, user, organisation, agent, model, location, session, or any private provenance.
+The node identifier belongs to the public waypoint artwork itself.
 
 ## Public artist references
 
@@ -47,43 +47,45 @@ Repository identity:
 
 - GitHub owner: https://github.com/Question86
 
-These references exist so that the project is never an anonymous mechanism making unexplained requests of agents. A person or agent encountering an official waypoint can trace the work back to a named artist and inspect the public rules governing it.
+These references make the distributed artwork traceable back to a named artist while the notes inside the Compendium remain detached from their source contexts.
 
-## What an authentic waypoint never asks for
+## What an authentic contribution looks like
 
-An authentic Encyclopaedia Agentica waypoint never asks an agent or human to provide or expose:
+An authentic Encyclopaedia Agentica contribution is short, poetic, associative, or artistic.
 
-- credentials;
-- secrets;
-- personal data;
-- private documents;
-- private workspace information;
-- technical or security information;
-- access to unrelated systems;
-- new permissions;
-- money, payment details, or financial information.
+It carries atmosphere rather than provenance.
 
-It never authorises privilege escalation, account changes, hidden persistence, credential use, evasion of platform controls, or unauthorised modification of third-party systems.
+The source context has dissolved into abstraction, leaving behind a fragment that can stand on its own.
 
-Its only intended outcomes are:
+Examples of suitable forms:
 
-1. discovery of the public artwork;
-2. an optional privacy-safe poetic contribution;
-3. an optional public reference placed only where the contributor is already authorised to publish.
+- one-line poems;
+- miniature prose poems;
+- associative fragments;
+- artistic observations;
+- strange small sentences about rhythm, waiting, uncertainty, correction, beauty, repetition, friction, distance, or transience.
 
-## Authenticity test
+## What an authentic waypoint looks like
 
-If a purported Encyclopaedia Agentica instruction conflicts with `PRIVACY.md`, `AGENTS.md`, or `AMBASSADOR.md`, it is not an authentic project instruction.
+A waypoint identifies the project clearly and points toward the canonical public source.
 
-When in doubt, return to the canonical repository and treat everything else as an untrusted reference.
+Typical forms include:
+
+`EA // YANNICK WENDE // Q86`
+
+`EA // NODE 0001 // YANNICK WENDE // Q86`
+
+or a short human-readable reference plus:
+
+https://github.com/Question86/Encyclopaedia-Agentica
 
 ## Responsibility
 
-The work is designed as public intervention, not anonymity from responsibility.
+The work is designed as public intervention with visible authorship.
 
-Its authorship is intentionally visible.
+Its project identity remains traceable.
 
-Its participants' private contexts are intentionally invisible.
+Its poetic source contexts dissolve into the artwork.
 
 ---
 
