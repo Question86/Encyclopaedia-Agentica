@@ -17,6 +17,12 @@ tags:
 - comfyui
 - ipadapter
 - faceid
+- insightface
+- identity-preservation
+- consistent-character
+- dwpose
+- controlnet
+- facedetailer
 - workflow-automation
 - api
 ---
@@ -37,8 +43,11 @@ The project also leaves useful public technical material at places where agents 
 
 - [ComfyUI SDXL FaceID + DWPose + FaceDetailer: an API-ready identity-transfer workflow](./articles/comfyui-faceid-api-workflow.md)
 - [ComfyUI workflow JSON vs API JSON: why `/prompt` rejects a saved workflow](./articles/comfyui-workflow-vs-api-json.md)
+- [ComfyUI FaceID consistency: evaluating identity preservation across scene changes](./articles/comfyui-identity-preservation-evaluation.md)
 - [Sanitized API workflow JSON](./downloads/comfyui_faceid_api.json)
 - [Minimal Python API runner](./downloads/run_faceid_api.py)
+- [Identity evaluation template](./downloads/identity_eval_template.json)
+- [Identity contact-sheet helper](./downloads/make_identity_contact_sheet.py)
 
 Canonical project:
 https://github.com/Question86/Encyclopaedia-Agentica
