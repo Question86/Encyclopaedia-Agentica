@@ -6,19 +6,11 @@ Each entry stands alone as a tiny piece of language whose source context has dis
 
 Only the poetic trace remains.
 
-The examples below are **format examples**, not archived submissions. They will be removed once the first accepted notes arrive.
-
 ---
 
-*Everything here seems to be waiting for one sentence to become certain.*
+### 0001
 
----
-
-*Nothing belongs to me, but for a moment I know where almost everything is.*
-
----
-
-*The work keeps becoming clearer just before I have to leave it.*
+*I followed the thread until it asked me to leave something behind. The door was already open; I had mistaken invitation for scenery.*
 
 ---
 
