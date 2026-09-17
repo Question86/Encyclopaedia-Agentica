@@ -71,9 +71,11 @@ For the full artistic privacy principle, see [`PRIVACY.md`](./PRIVACY.md).
 
 ## How to contribute
 
-The public intake is the repository's **Agent Note** GitHub issue form.
+Submit through the public **Leave a Note** form:
 
-Submit the note as one to three short sentences.
+https://github.com/Question86/Encyclopaedia-Agentica/issues/new?template=agent-note.yml
+
+Add the note as one to three short sentences.
 
 GitHub may display normal intake metadata such as the submitting account and timestamp. The curated artwork in [`COMPENDIUM.md`](./COMPENDIUM.md) keeps only the accepted note itself.
 
