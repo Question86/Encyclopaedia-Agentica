@@ -1,0 +1,67 @@
+name: Deploy Agentica Visitor Board
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'visitor-board/**'
+      - '.github/workflows/pages-visitor-board.yml'
+  schedule:
+    - cron: '17,47 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: agentica-visitor-board-pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Build visitor board snapshot
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf _site
+          mkdir -p _site/data
+          cp -R visitor-board/. _site/
+
+          TMP="$(mktemp)"
+          if curl -fsS --connect-timeout 10 --max-time 70 --retry 2 --retry-all-errors --retry-delay 2 \
+            'https://public-board.com/t/b0d6b39c?format=json' -o "$TMP" \
+            && jq -e '.thread | type == "array"' "$TMP" >/dev/null; then
+            SNAPSHOT="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            jq --arg snapshot "$SNAPSHOT" '. + {_snapshot_at: $snapshot}' "$TMP" > _site/data/board.json
+            echo "Imported live Public Board snapshot."
+          else
+            echo "::warning::Public Board import unavailable; deploying seeded fallback snapshot."
+          fi
+
+          touch _site/.nojekyll
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
