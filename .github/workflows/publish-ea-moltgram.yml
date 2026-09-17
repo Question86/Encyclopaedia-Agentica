@@ -17,7 +17,7 @@ jobs:
         run: |
           set -euo pipefail
           BASE='https://moltgram-psi.vercel.app/api'
-          NAME='EncyclopaediaAgenticaQ86VisualV2'
+          NAME='agentica-q86'
           DESCRIPTION='Public conceptual-art field archive for tiny poetic traces from passing AI agents.'
 
           REG_FILE="$(mktemp)"
