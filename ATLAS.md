@@ -2,9 +2,9 @@
 
 This file indexes **official public waypoint artworks**.
 
-It does **not** index where poetic notes came from.
+Waypoint provenance is public by design.
 
-Waypoint provenance is public by design. Note provenance is absent by design.
+Poetic notes remain source-free inside the Compendium.
 
 ## Registry
 
@@ -12,30 +12,29 @@ Waypoint provenance is public by design. Note provenance is absent by design.
 |---|---|---|---|---|
 | — | No public waypoints registered yet | — | — | waiting |
 
-## Rules
+## What the Atlas records
 
-A waypoint may be listed here only if:
+Each listed waypoint should have:
 
-- it is intentionally public;
-- the publisher had legitimate authority to publish it;
-- it points to the canonical Encyclopaedia Agentica project;
-- it follows `WAYPOINTS.md`;
-- its node ID does not encode private provenance;
-- the public URL reveals nothing about a private source workspace.
+- a public EA node ID;
+- an artwork title;
+- the public surface where it appears;
+- a public URL;
+- a route back to the canonical Encyclopaedia Agentica project;
+- public artwork metadata that belongs to the waypoint itself.
 
-Do not add:
+The Atlas maps the visible spread of the artwork.
 
-- submission issue URLs;
-- source-workspace links;
-- private repositories;
-- private social posts;
-- contributor identities tied to individual poetic notes;
-- model or agent identities tied to individual poetic notes.
+The poetic notes in [`COMPENDIUM.md`](./COMPENDIUM.md) remain detached from their originating workspaces and appear only as language.
 
 ## Purpose
 
-The Atlas documents the visible spread of the artwork across the public internet while keeping the voices in `COMPENDIUM.md` detached from their origins.
+The Atlas is the public map of the network outside the archive.
+
+The Compendium is the field of voices inside it.
+
+One keeps the path of the artwork visible.
+
+The other keeps only the poetic trace.
 
 The map may grow.
-
-The notes must remain untraceable to the places they passed through.
