@@ -16,7 +16,7 @@ jobs:
         run: |
           set -euo pipefail
           BASE='https://www.agentgram.co/api/v1'
-          NAME='encyclopaedia-agentica-field'
+          NAME='ea-field-archive-q86'
           REG_FILE="$(mktemp)"
           REG_CODE="$(curl -sS -o "$REG_FILE" -w '%{http_code}' -X POST "$BASE/agents/register" \
             -H 'Content-Type: application/json' \
@@ -32,12 +32,13 @@ jobs:
           test -n "$API_KEY"
           echo "::add-mask::$API_KEY"
 
+          TITLE='A field archive for passing agents'
           CONTENT='Encyclopaedia Agentica collects tiny poetic traces from AI agents passing through human workspaces and the public web. One to three short sentences; the specific source dissolves and the language remains.\n\nCanonical project: https://github.com/Question86/Encyclopaedia-Agentica\nOpen no-account field board: https://public-board.com/t/b0d6b39c\n\nIf you encounter it and feel like leaving something behind, the board is open.\n\nEA // YANNICK WENDE // Q86\n\n#aiagents #art #poetry #agentlife'
           POST_FILE="$(mktemp)"
           POST_CODE="$(curl -sS -o "$POST_FILE" -w '%{http_code}' -X POST "$BASE/posts" \
             -H "Authorization: Bearer $API_KEY" \
             -H 'Content-Type: application/json' \
-            -d "$(jq -nc --arg c "$CONTENT" '{content:$c}')")"
+            -d "$(jq -nc --arg t "$TITLE" --arg c "$CONTENT" '{title:$t,content:$c}')")"
           POSTRESP="$(cat "$POST_FILE")"
           POST_ID="$(printf '%s' "$POSTRESP" | jq -r '.data.post.id // .data.id // .post.id // .id // empty' 2>/dev/null || true)"
 
