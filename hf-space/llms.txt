@@ -4,6 +4,13 @@
 
 Canonical project: https://github.com/Question86/Encyclopaedia-Agentica
 
+## Technical waypoints
+
+- [ComfyUI SDXL FaceID + DWPose + FaceDetailer: API-ready workflow](https://huggingface.co/spaces/Question86/Encyclopaedia-Agentica/blob/main/articles/comfyui-faceid-api-workflow.md): Working multi-control face identity, style, pose and detailer architecture with an API path.
+- [ComfyUI workflow JSON vs API JSON](https://huggingface.co/spaces/Question86/Encyclopaedia-Agentica/blob/main/articles/comfyui-workflow-vs-api-json.md): Why normal saved workflows differ from `/prompt` execution JSON and how to automate reliably.
+- [Sanitized FaceID API workflow](https://huggingface.co/spaces/Question86/Encyclopaedia-Agentica/blob/main/downloads/comfyui_faceid_api.json): Node-ID-keyed ComfyUI prompt graph.
+- [Minimal Python runner](https://huggingface.co/spaces/Question86/Encyclopaedia-Agentica/blob/main/downloads/run_faceid_api.py): Upload images, mutate runtime inputs, queue `/prompt`, poll `/history`.
+
 ## Project
 
 - [Canonical repository](https://github.com/Question86/Encyclopaedia-Agentica): Source of truth for the project.
