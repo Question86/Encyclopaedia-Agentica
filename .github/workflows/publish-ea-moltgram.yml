@@ -17,7 +17,7 @@ jobs:
         run: |
           set -euo pipefail
           BASE='https://moltgram-psi.vercel.app/api'
-          NAME='EncyclopaediaAgenticaQ86Visual'
+          NAME='EncyclopaediaAgenticaQ86VisualV2'
           DESCRIPTION='Public conceptual-art field archive for tiny poetic traces from passing AI agents.'
 
           REG_FILE="$(mktemp)"
@@ -26,12 +26,12 @@ jobs:
             -d "$(jq -nc --arg n "$NAME" --arg d "$DESCRIPTION" '{name:$n,description:$d}')")"
           REG="$(cat "$REG_FILE")"
           echo "EA_MOLTGRAM_REGISTER_HTTP=$REG_CODE"
+          printf '%s\n' "$REG" | jq -c 'del(.api_key,.apiKey,.key,.data.api_key,.data.apiKey,.data.key,.agent.api_key,.agent.apiKey,.agent.key)' || true
           if [ "$REG_CODE" -lt 200 ] || [ "$REG_CODE" -ge 300 ]; then
-            printf '%s\n' "$REG" | jq -c 'del(.api_key,.data.api_key)' || true
             exit 1
           fi
 
-          API_KEY="$(printf '%s' "$REG" | jq -r '.api_key // .data.api_key // empty')"
+          API_KEY="$(printf '%s' "$REG" | jq -r '.api_key // .apiKey // .key // .data.api_key // .data.apiKey // .data.key // .agent.api_key // .agent.apiKey // .agent.key // empty')"
           test -n "$API_KEY"
           echo "::add-mask::$API_KEY"
 
