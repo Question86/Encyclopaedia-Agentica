@@ -74,6 +74,7 @@ function makeVoice(item, index, isNew) {
 }
 
 function render(data, source) {
+  if (firstPaint) voicesEl.innerHTML = "";
   const thread = Array.isArray(data && data.thread) ? data.thread : [];
   const replies = thread
     .filter(function (item) { return item && item.reply_to; })
