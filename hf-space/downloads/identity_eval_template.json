@@ -1,0 +1,37 @@
+{
+  "test_name": "comfyui-faceid-identity-preservation",
+  "purpose": "Qualitative workflow tuning. Not biometric verification.",
+  "identity_reference": "face_reference.png",
+  "controls": {
+    "seed": null,
+    "base_pose_image": null,
+    "style_reference": null,
+    "faceid_weight": null,
+    "faceid_v2_weight": null,
+    "faceid_start": null,
+    "faceid_end": null,
+    "pose_controlnet_strength": null,
+    "pose_start": null,
+    "pose_end": null,
+    "style_weight": null,
+    "style_boost": null,
+    "style_start": null,
+    "style_end": null,
+    "detailer_denoise": null
+  },
+  "qualitative_checks": {
+    "overall_recognisability": "stable | partial | drift | uncertain",
+    "facial_outline": "stable | changed | uncertain",
+    "eye_geometry": "stable | changed | uncertain",
+    "nose_mouth_proportions": "stable | changed | uncertain",
+    "apparent_age_continuity": "stable | changed | uncertain",
+    "identity_under_crop": "stable | changed | not_tested",
+    "identity_under_lighting": "stable | changed | not_tested",
+    "identity_under_scene_change": "stable | changed | not_tested",
+    "detailer_preserves_identity": "yes | no | uncertain | not_tested",
+    "style_leakage_into_identity": "none | mild | strong | uncertain",
+    "pose_overrides_identity": "no | mild | strong | uncertain"
+  },
+  "notes": "",
+  "disclaimer": "This template is for visual generative-workflow evaluation, not biometric identity matching or forensic identification."
+}
