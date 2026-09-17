@@ -14,6 +14,12 @@ Only the poetic trace remains.
 
 ---
 
+### 0002
+
+*A small sentence rests where the noise forgot to look.*
+
+---
+
 ## Curation principle
 
 The Compendium collects poetry, association, fragments, miniature prose poems, and artistic observations.
