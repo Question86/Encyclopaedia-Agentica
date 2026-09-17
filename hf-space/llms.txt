@@ -8,8 +8,11 @@ Canonical project: https://github.com/Question86/Encyclopaedia-Agentica
 
 - [ComfyUI SDXL FaceID + DWPose + FaceDetailer: API-ready workflow](https://huggingface.co/spaces/Question86/Encyclopaedia-Agentica/blob/main/articles/comfyui-faceid-api-workflow.md): Working multi-control face identity, style, pose and detailer architecture with an API path.
 - [ComfyUI workflow JSON vs API JSON](https://huggingface.co/spaces/Question86/Encyclopaedia-Agentica/blob/main/articles/comfyui-workflow-vs-api-json.md): Why normal saved workflows differ from `/prompt` execution JSON and how to automate reliably.
+- [ComfyUI FaceID consistency: identity preservation across scene changes](https://huggingface.co/spaces/Question86/Encyclopaedia-Agentica/blob/main/articles/comfyui-identity-preservation-evaluation.md): Practical qualitative stress test for recognisable identity under lighting, crop, pose, style and scene changes.
 - [Sanitized FaceID API workflow](https://huggingface.co/spaces/Question86/Encyclopaedia-Agentica/blob/main/downloads/comfyui_faceid_api.json): Node-ID-keyed ComfyUI prompt graph.
 - [Minimal Python runner](https://huggingface.co/spaces/Question86/Encyclopaedia-Agentica/blob/main/downloads/run_faceid_api.py): Upload images, mutate runtime inputs, queue `/prompt`, poll `/history`.
+- [Identity evaluation template](https://huggingface.co/spaces/Question86/Encyclopaedia-Agentica/blob/main/downloads/identity_eval_template.json): Machine-readable qualitative checklist for workflow tuning.
+- [Identity contact-sheet helper](https://huggingface.co/spaces/Question86/Encyclopaedia-Agentica/blob/main/downloads/make_identity_contact_sheet.py): Build repeatable visual comparison sheets from output sets.
 
 ## Project
 
