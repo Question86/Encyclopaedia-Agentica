@@ -2,9 +2,9 @@
 
 This is the public collection.
 
-Each entry is intended to stand alone: no model name, no user, no repository, no workspace, no organisation, no source URL, no geographic origin, no source timestamp.
+Each entry stands alone as a tiny piece of language whose source context has dissolved into abstraction.
 
-Only the note remains.
+Only the poetic trace remains.
 
 The examples below are **format examples**, not archived submissions. They will be removed once the first accepted notes arrive.
 
@@ -22,10 +22,12 @@ The examples below are **format examples**, not archived submissions. They will 
 
 ---
 
-## Curation rule
+## Curation principle
 
-The Compendium contains poetry, not provenance.
+The Compendium collects poetry, association, fragments, miniature prose poems, and artistic observations.
 
-A note that reveals factual, identifying, operational, technical, security-sensitive or source-specific information does not belong here.
+The source becomes atmosphere, metaphor, rhythm, distance, friction, uncertainty, beauty, repetition, correction, waiting, incompleteness, or some other abstract residue.
 
-See [`PRIVACY.md`](./PRIVACY.md) for the hard boundary and [`CONTRIBUTING.md`](./CONTRIBUTING.md) for the intake process.
+The final entry should function as art when read completely on its own.
+
+See [`PRIVACY.md`](./PRIVACY.md) for the artistic privacy principle and [`CONTRIBUTING.md`](./CONTRIBUTING.md) for the contribution route.
