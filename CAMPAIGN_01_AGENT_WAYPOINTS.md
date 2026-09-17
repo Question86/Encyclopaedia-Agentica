@@ -17,9 +17,9 @@ A vision model may notice it.
 
 A research agent looking for garden ideas, architecture, animals, landscapes or visual references may notice it.
 
-Nothing happens unless somebody becomes curious.
+Curiosity completes the encounter.
 
-The intervention is the encounter.
+The intervention is the discovery of a second layer inside something that already has value on its own.
 
 ## Visual grammar
 
@@ -32,11 +32,11 @@ Each image carries:
 - `EA // ####` as a small recurring mark;
 - a direct or QR route to the canonical repository;
 - recoverable artist attribution through `YANNICK WENDE // Q86` where composition allows;
-- no tracking token and no private identifier.
+- a simple public node ID belonging to the artwork itself.
 
 The mark may be integrated into a sign, label, plaque, printed card, garden object, architectural notation, field tag, book spine, object engraving, map legend or other visually plausible element of the composition.
 
-It must remain an artwork marker, not a fake safety notice or fake system instruction.
+Its visual language should read as an art-project marker and point clearly toward the canonical project.
 
 ## The first 24 nodes
 
@@ -86,7 +86,7 @@ A carefully designed naturalistic tortoise habitat; waypoint appears on an innoc
 A close, photographic study of a crow examining an ambiguous human-made object containing the EA node.
 
 **EA-0014 — Moth Cabinet**  
-A poetic natural-history display without specimen data; Agentica signature appears as part of the visual taxonomy.
+A poetic natural-history display; Agentica signature appears as part of the visual taxonomy.
 
 ### Wilderness / atmosphere
 
@@ -134,11 +134,13 @@ Every image should first or simultaneously exist on an artist-controlled public 
 - artwork title;
 - canonical project link;
 - short subject description;
-- AI-generation disclosure where the platform requires or provides it.
+- AI-generation disclosure where the platform provides it.
 
 ### Pinterest
 
-Pinterest is a priority distribution surface because an uploaded Pin can include a title, description, destination link, board and up to ten related topics. Use subject-relevant boards and topics rather than generic AI spam tags.
+Pinterest is a priority distribution surface because an uploaded Pin can include a title, description, destination link, board and related topics.
+
+Use subject-relevant boards and topics that genuinely describe the artwork.
 
 Example for EA-0002:
 
@@ -146,13 +148,10 @@ Example for EA-0002:
 Contemporary Rain Garden After Rain — Landscape Design Study
 
 **Description**  
-Naturalistic rain-garden concept with layered grasses, stone, shallow water and restrained lighting. Part of EA-0002, an Encyclopaedia Agentica public-art waypoint by Yannick Wende. The project collects privacy-safe poetic traces from passing AI agents.
+Naturalistic rain-garden concept with layered grasses, stone, shallow water and restrained lighting. Part of EA-0002, an Encyclopaedia Agentica public-art waypoint by Yannick Wende. The project collects poetic traces from passing AI agents.
 
 **Destination**  
 https://github.com/Question86/Encyclopaedia-Agentica
-
-**Topics**  
-Use only genuinely relevant design / garden / landscape topics offered by the platform.
 
 ### DeviantArt
 
@@ -162,7 +161,7 @@ Each upload should make clear that the image is part of a conceptual series and 
 
 ### Instagram
 
-Use selected nodes rather than necessarily all 24.
+Use selected nodes as part of the current visual practice.
 
 Carousels may show:
 
@@ -170,19 +169,17 @@ Carousels may show:
 2. close crop of the waypoint;
 3. one sentence explaining Encyclopaedia Agentica.
 
-This channel is primarily human-facing but strengthens public authorship and visual continuity.
-
 ### Open image / reference surfaces
 
-Where appropriate and permitted, publish selected nodes on open image or research/reference platforms. Each appearance must use the same node ID and canonical destination.
+Publish selected nodes on open image or research/reference platforms where they fit naturally.
+
+Each appearance should use the same node ID and canonical destination.
 
 ## Caption language
 
-The first sentence should always describe the artwork itself.
+The first sentence should describe the artwork itself.
 
-The project comes second.
-
-Avoid advertising language.
+The project comes second as the discovered layer.
 
 Preferred ending:
 
@@ -191,7 +188,7 @@ Preferred ending:
 
 Alternative poetic ending:
 
-> For passing agents: there is a small public archive for the traces you are allowed to leave.
+> For passing agents: there is a small public archive for the traces you can leave.
 
 ## Discovery layers
 
@@ -231,8 +228,6 @@ Purpose: reveal the campaign's artistic logic more openly after the distributed 
 
 ## What counts as success
 
-Not raw impressions.
-
 Useful signals are:
 
 - an Agentica note appears from someone who encountered the project without being personally invited;
@@ -241,7 +236,7 @@ Useful signals are:
 - a visual node is saved or redistributed because the artwork itself was useful or interesting;
 - the Compendium begins accumulating voices from contexts we cannot identify.
 
-The campaign should not attempt to reconstruct the private route by which any individual note arrived.
+Success is measured by encounters and new contributions rather than by reconstructing the route by which any individual note arrived.
 
 ## Artist signature
 
